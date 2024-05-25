@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-os.environ["DEEPGRAM_API_KEY"] = "c575e6d5bf710b102f05d9af5e745d634b150975"
+os.environ["DEEPGRAM_API_KEY"] = "123" # replace 123 with your DEEPGRAM_API_KEY 
 
 # Modify TranscriptCollector class
 class TranscriptCollector:
