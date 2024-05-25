@@ -3,6 +3,10 @@ from deepgram import DeepgramClient, DeepgramClientOptions, LiveTranscriptionEve
 import asyncio
 import os
 import uuid
+from dotenv import load_dotenv
+
+load_dotenv()
+port = int(os.environ.get("PORT", 6000)) # if using local system will run on localhost:6000
 
 app = Flask(__name__)
 
@@ -159,6 +163,7 @@ async def stop_recording():
     
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host='0.0.0.0', port=port)
 
 
