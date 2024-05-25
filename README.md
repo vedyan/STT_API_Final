@@ -1,6 +1,8 @@
 Description:
 
-This Flask application leverages Deepgram for real-time speech-to-text conversion. Users can interact with the application to record their speech, which is then transcribed into text. Below are the setup steps and instructions on how to use the application:
+This Flask application leverages Deepgram for real-time speech-to-text conversion. Users can interact with the application to record their speech, which is then transcribed into text.
+The APIs used in the provided setup instructions follow a RESTful architecture.
+Below are the setup steps and instructions on how to use the application:
 
 STEPS for setup :
 1. Clone repository
