@@ -2,10 +2,12 @@ from flask import Flask, jsonify, request, render_template
 from deepgram import DeepgramClient, DeepgramClientOptions, LiveTranscriptionEvents, LiveOptions, Microphone
 import asyncio
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
-os.environ["DEEPGRAM_API_KEY"] = "123" # replace 123 with your DEEPGRAM_API_KEY 
+DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY") 
 
 # Modify TranscriptCollector class
 class TranscriptCollector:
