@@ -4,4 +4,3 @@ asyncio
 python-dotenv
 uuid
 Jinja2
-Flask[async]
