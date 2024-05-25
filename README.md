@@ -7,9 +7,9 @@ Below are the setup steps and instructions on how to use the application:
 STEPS for setup :
 1. Clone repository
 2. pip install -r requirements.txt
-3. obtain DEEPGRAM_API_KEY replace with your key in code
-3. python app8.py
-4. navigating to http://localhost:5000
+3. obtain DEEPGRAM_API_KEY and Create a ".env" file specifying values of DEEPGRAM_API_KEY
+4. python app8.py
+5. navigating to http://localhost:5000
 
 Steps for how to use :
 1. Click on start recording button 
