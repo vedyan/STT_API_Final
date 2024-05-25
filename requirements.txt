@@ -1,6 +1,7 @@
-Flask
+Flask[async]
 deepgram-sdk
 asyncio
 python-dotenv
 uuid
 Jinja2
+Flask[async]
