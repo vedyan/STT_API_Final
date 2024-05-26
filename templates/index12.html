@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recording Control</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Recording Control</h1>
+    <button id="startButton">Start Recording</button>
+    <button id="stopButton">Stop Recording</button>
+    <div id="transcription"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#startButton").click(function() {
+                $.ajax({
+                    url: '/start_recording',
+                    type: 'POST',
+                    success: function(response) {
+                        console.log(response);
+                        alert(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        alert("Error occurred, please try again later.");
+                    }
+                });
+            });
+
+            $("#stopButton").click(function() {
+                $.ajax({
+                    url: '/stop_recording',
+                    type: 'POST',
+                    success: function(response) {
+                        console.log(response);
+                        if (response.transcription) {
+                            $("#transcription").text(response.transcription);
+                        } else {
+                            alert("No transcription available.");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        alert("Error occurred, please try again later.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
