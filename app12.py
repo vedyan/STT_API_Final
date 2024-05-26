@@ -43,6 +43,7 @@ dg_connection = None  # Global variable to hold the connection
 async def get_transcript():
     global dg_connection
     try:
+        loop = asyncio.get_event_loop()  # Get the current event loop
         config = DeepgramClientOptions(options={"keepalive": "true"})
         deepgram: DeepgramClient = DeepgramClient("", config)
 
@@ -60,22 +61,7 @@ async def get_transcript():
                 transcript_collector.reset()
                 # print(f"Full Transcript List: {full_transcript_list}")
                 # Return full transcript list if needed elsewhere
-                return full_transcript_list
-        ...
-        # async def on_message(self, result, **kwargs):
-        #     sentence = result.channel.alternatives[0].transcript
-        #     if result.speech_final:
-        #         if sentence != self.last_processed_sentence:
-        #             transcript_collector.add_part(sentence)
-        #             full_transcript_list = transcript_collector.get_full_transcript_list()
-        #             full_transcript = transcript_collector.get_full_transcript()
-        #             print(f"speaker: {full_transcript}")
-        #             self.last_processed_sentence = sentence
-        #             return full_transcript_list
-
-
-
-        ...
+                # return full_transcript_list
 
         async def on_error(self, error, **kwargs):
             print(f"\n\n{error}\n\n")
